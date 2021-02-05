@@ -38,27 +38,24 @@ if(!empty($paymentData)){
     <p>Paid Amount: <?php echo $paymentData['payment_gross'].' '.$paymentData['currency_code']; ?></p>
     <p>Payment Status: <?php echo $paymentData['payment_status']; ?></p>
     <p>Payment Date: <?php echo $paymentData['created']; ?></p>
-    
-     
-    
     </center>
 </span>
 <?php  
-$update_data = array('status'=> 1);
-            $where = array('user_id'=> $uid);
-            $db->update('tata_users',$update_data,$where);      
-}else{
-    echo '<p>Payment was unsuccessful</p>';
-    ?>
-    
-    <?php
+    $uid= $_GET['uid'];
+    $update_data = array('status'=> 1);
+    $where = array('user_id'=> $uid);
+    $db->update('tata_users',$update_data,$where);      
+    }else{
+        echo '<p>Payment was unsuccessful</p>';
+        ?>
+        
+        <?php
 
-}
+    }
 ?>
-   <script>
-      
-  setTimeout(index, 3000);
-    function index() {
-        window.location.replace("membership.php");
+<script>
+setTimeout(index, 3000);
+function index() {
+    window.location.replace("membership.php");
 }
-    </script>
+</script>

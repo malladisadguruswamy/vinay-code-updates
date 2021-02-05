@@ -108,7 +108,7 @@
                                         </div>
                                         <div class="form-group col-md-6 pb-3">
                                             <label>Phone Number</label>
-                                            <input type="text" class="form-control" placeholder="Enter your Phone Number"  name="mobile" id="mobile"> 
+                                            <input type="text" class="form-control" placeholder="Enter your Phone Number" onkeypress="return blockSpecialChar(event)" name="mobile" id="mobile" maxlength="10"> 
                                         </div>
                                         <div class="form-group col-md-6 pb-3">
                                             <label class="">Password</label>
@@ -188,7 +188,7 @@
                                         <div class="form-group col-md-12 ftwo ">
                                             <input type="checkbox" name="mem_accept" id="mem_accept" class="terms_conditions mem_accept" >  <span class="terms_conditions_text" style="color:grey!important;  ">I understand that membership fee is non-refundable.</span>
                                         </div>
-                                        <button class="btn btn-primary submit">submit</button>
+                                        <!-- <button class="btn btn-primary submit">submit</button> -->
                                     </div>
                                 </div>
                           </div>
@@ -196,97 +196,144 @@
                         <!-- SECTION 3 -->
                         <h2>3</h2>
                         <section >
-                           <!--  <div class="inner">
-                                <form class="formtwo">
-                                    <div class="row rone">
-                                        <div class="form-group col-md-6 pb-3">
-                                            <label>First Name</label>
-                                            <input type="text" class="form-control" placeholder="Enter your First Name" name="helllle" />
-                                        </div>
-                                        <div class="form-group col-md-6 pb-3">
-                                            <label class="">Last Name</label>
-                                            <input type="text" class="form-control ml-3 box2" placeholder="Enter your Last Name " style="color: #abafb3 !important;" name="helllle" />
-                                        </div>
-
-                                        <div class="form-group col-md-12 pb-3">
-                                            <label>Email</label>
-                                            <input type="email" class="form-control" placeholder="Enter your Email" name="helllle" />
-                                        </div>
-                                        <div class="form-group col-md-6 pb-3">
-                                            <label>Phone Number</label>
-                                            <input type="text" class="form-control" placeholder="Enter your Phone Number" name="" />
-                                        </div>
-                                        <div class="form-group col-md-6 pb-3">
-                                            <label class="">Password</label>
-                                            <input type="text" class="form-control ml-3 pb-2" placeholder="Enter your Password  " style="color: #abafb3 !important;" name="" />
-                                        </div>
-
-                                        <div class="form-group col-md-6 pb-3">
-                                            <label>Street</label>
-                                            <input type="text" class="form-control" placeholder="Enter your Street" name="" />
-                                        </div>
-                                        <div class="form-group col-md-6 pb-3">
-                                            <label class="">City</label>
-                                            <input type="text" class="form-control ml-3 box2" placeholder="Enter your City  " style="color: #abafb3 !important;" name="" />
-                                        </div>
-
-                                        <div class="form-group col-md-6 pb-3">
-                                            <label class="">State</label>
-                                            <input type="text" class="form-control ml-3 box2" placeholder="Enter your State  " style="color: #abafb3 !important;" name="" />
-                                        </div>
-
-                                        <div class="form-group col-md-6 pb-3">
-                                            <label class="">Country</label>
-                                            <input type="text" class="form-control ml-3 box2" placeholder="Enter your Country  " style="color: #abafb3 !important;" name="" />
-                                        </div>
-
-                                        <div class="form-group col-md-6 pb-3">
-                                            <label class="">Spouse First Name</label>
-                                            <input type="text" class="form-control ml-3 box2" placeholder="ENter your Spouse First Name  " style="color: #abafb3 !important;" name="" />
-                                        </div>
-
-                                        <div class="form-group col-md-6 pb-3">
-                                            <label class="">Spouse Last Name</label>
-                                            <input type="text" class="form-control ml-3 box2" placeholder="Enter your Spouse Last Name  " style="color: #abafb3 !important;" name="" />
-                                        </div>
-
-                                        <div class="form-group col-md-4 ftwo py-3">
-                                            <h4 class="Subscription_plan">Subscription Plan</h4>
-                                            <p class="membership_amount">Membership Amount</p>
-                                            <h4 class="Subscription_plan">Charitable Activities</h4>
-                                        </div>
-                                        <div class="form-group col-md-4 ftwo py-3">
-                                            <h4 class="Subscription_plan">Pricing</h4>
-                                            <p class="membership_amount">$50</p>
-                                            <h4 class="Subscription_plan">Additional Amount</h4>
-                                        </div>
-                                        <div class="form-group col-md-6 ftwo py-3 border-bm">
-                                            <p class="membership_amounts_total">Total</p>
-                                        </div>
-                                        <div class="form-group col-md-2 ftwo py-3">
-                                            <p class="membership_amounts">$0</p>
-                                        </div>
-                                        <div class="form-group col-md-12 ftwo">
-                                            <input type="checkbox" name="" class="terms_conditions" />
-                                            <span class="terms_conditions_text" style="color: grey !important;">I understand that membership fee is non-refundable.</span>
-                                        </div>
-
-                                        <div class="col-md-12">
-                                            <a href="paym"></a>
-                                            <div class="btn btn-md payment_btn" data-toggle="modal" data-target="#ordine">Proceed to Payment</div>
-                                            <span class="btn btn-md payment_btn">Edit </span>
-                                        </div>
+                            <div class="inner" id="target">
+                                <div class="row rone">
+                                    <div class="form-group col-md-6 pb-3">
+                                        <label>First Name</label>
+                                        <input type="text" class="form-control" placeholder="Enter your First Name" name="user_fname" id="user_fname"  >
                                     </div>
-                                </form>
-                            </div> -->
-                            <div id="show"></div>
+                                    <div class="form-group col-md-6 pb-3">
+                                        <label class="">Last Name</label>
+                                        <input type="text" class="form-control ml-3 box2" placeholder="Enter your Last Name " style="color:#ABAFB3!important;" name="user_lname" id="user_lname" >
+                                    </div>
+
+                                    <div class="form-group col-md-12 pb-3">
+                                        <label>Email</label>
+                                        <input type="email" class="form-control" onblur="validateEmail(this);" readonly="readonly" placeholder="Enter your Email" onkeypress="return blockSpecialChar(event)" name="user_email" id="user_email" >
+                                    </div>
+                                    <div class="form-group col-md-6 pb-3">
+                                        <label>Phone Number</label>
+                                        <input type="text" class="form-control" placeholder="Enter your Phone Number" readonly="readonly" name="user_mobile" id="user_mobile" >
+                                    </div>
+                                    <div class="form-group col-md-6 pb-3">
+                                        <label class="">Password</label>
+                                        <input type="password" class="form-control ml-3 pb-2" placeholder="Enter your Password " style="color:#ABAFB3!important; " name="user_pwd" id="user_pwd">
+                                    </div>
+
+                                    <div class="form-group col-md-6 pb-3">
+                                        <label>Street</label>
+                                        <input type="text" class="form-control" placeholder="Enter your Street" name="user_street" id="user_street">
+                                    </div>
+                                    <div class="form-group col-md-6 pb-3">
+                                        <label class="">City</label>
+                                        <input type="text" class="form-control ml-3 box2" placeholder="Enter your City " style="color:#ABAFB3!important; " id="user_city" name="user_city" >
+                                    </div>
+
+                                    <div class="form-group col-md-6 pb-3">
+                                        <label class="">State</label>
+                                        <input type="text" class="form-control ml-3 box2" placeholder="Enter your State " id="user_state" style="color:#ABAFB3!important; " name="user_state" >
+                                    </div>
+
+                                    <div class="form-group col-md-6 pb-3">
+                                        <label class="">Country</label>
+                                        <input type="text" class="form-control ml-3 box2" placeholder="Enter your Country " id="user_country" style="color:#ABAFB3!important; " name="user_country" >
+                                    </div>
+
+                                    <div class="form-group col-md-6 pb-3">
+                                        <label class="">Spouse First Name</label>
+                                        <input type="text" class="form-control ml-3 box2" placeholder="ENter your Spouse First Name " style="color:#ABAFB3!important; " name="user_sfname" id="user_sfname" >
+                                    </div>
+
+                                    <div class="form-group col-md-6 pb-3">
+                                        <label class="">Spouse Last Name</label>
+                                        <input type="text" class="form-control ml-3 box2" placeholder="Enter your Spouse Last Name " style="color:#ABAFB3!important; " name="user_slname" id="user_slname" >
+                                    </div>
+
+                                    <div class="form-group col-md-4 ftwo py-3">
+                                        <h4 class="Subscription_plan">Subscription Plan</h4>
+                                        <p class="membership_amount">Membership Amount</p>
+                                        <h4 class="Subscription_plan">Charitable Activities</h4>
+                                    </div>
+                                    <div class="form-group col-md-4 ftwo py-3">
+                                        <h4 class="Subscription_plan">Pricing</h4>
+                                        <p class="membership_amount"><input type="text" class="form-control ml-3 box2" placeholder="Enter Plan " style="color:#ABAFB3!important; " name="user_membership_plan_cost" id="user_membership_plan_cost" ></p>
+                                        <h4 class="Subscription_plan">Additional Amount</h4>
+                                    </div>
+                                    <div class="form-group col-md-6 ftwo py-3 border-bm">
+                                        <p class="membership_amounts_total">Total</p>
+                                    </div>
+                                    <div class="form-group col-md-2 ftwo py-3">
+                                        <p class="membership_amounts">$0</p>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <a href="paym"></a><button class="btn btn-md payment_btn submit" type="submit">Save & Proceed to Payment</button>
+                                        <span class="btn btn-md payment_btn" onclick="edit_membership()">Edit </span>
+                                    </div>
+                                </div>
+                            </div>
                         </section>
                     </div>
                 </form>
             </div>
         </div>
     </div>
-   
+     <!-- Payment modal -->
+    <div id="ordine" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title text-center">Payment Gateway</h4>
+                    <button type="button" class="close" data-dismiss="modal">×</button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div id="cp6a35a56143" style="margin: 10px 0" class="rounded-div" onclick="document.getElementById('pay_now_form_f59fe4a644').submit()">
+                                    <form action="https://checkout.globalgatewaye4.firstdata.com/pay" id="pay_now_form_f59fe4a644" method="post">
+                                        <input type="hidden" name="x_login" value="WSP-TELAN-o5DbNADVzw" />
+                                        <input type="hidden" name="x_show_form" value="PAYMENT_FORM" />
+                                        <input type="hidden" name="x_fp_sequence" value="16124543372078911578" />
+                                        <input type="hidden" name="x_fp_hash" value="PNB-1.0-3e6816cf1a0c8daa9889162dfe03c19d5105d38b" />
+                                        <input type="hidden" name="x_amount" id="x_amount" />
+                                        <input type="hidden" name="x_currency_code" value="USD" />
+                                        <input type="hidden" name="x_test_request" value="FALSE" />
+                                        <input type="hidden" name="x_relay_response" value="" />
+                                        <input type="hidden" name="donation_prompt" />
+                                        <input type="hidden" name="button_code" value="Pay Now Member Registration" />
+                                        <div class="cpwrap">
+                                            <button  type="button"><img src="tataimages/credit.png"  class="img-fluid debit_card"></button>
+                                        </div>
+                                    </form>
+                                </div>
+                        </div>
+                        <div class="col-md-6">
+                            <?php
+                                include 'PaypalExpress.class.php';
+                                $paypal = new PaypalExpress;
+
+                                ?>
+                                <input type="hidden" id="invironment" value="<?php echo $paypal->paypalEnv; ?>">
+                                <input type="hidden" id="sandbox" value="<?php echo $paypal->paypalClientID; ?>">
+                                <input type="hidden" id="production" value="<?php echo $paypal->paypalClientID; ?>">
+                            <div class="item">
+                                <!-- Checkout button -->
+                                <div id="paypal-button"></div>
+                                <script src="https://www.paypalobjects.com/api/checkout.js"></script>
+                            </div>
+                            <script>
+                                
+                            </script>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
 <?php include('footer.php');?>
  <script>
     $(document).ready(function () {
@@ -310,7 +357,8 @@
     function setPayment(plan, amount) {
         $("#set_plan").val(plan);
         $("#set_amount").val(amount);
-        $("#membership_amounts").text(amount);
+        $("#membership_amounts").text('$'+amount);
+        $("#user_membership_plan_cost").val(amount);
     }
     // Once add button is clicked
     $(document).ready(function ()
@@ -342,22 +390,69 @@
                 type: 'post',
                 url: 'tata_users.php',
                 data: $('form').serialize(),
-                success: function () {
-                    
-                    if (swal("Good job!", "Registered Successfully", "success"))
-                    {
-                        // setTimeout(index, 10000);
-                        //         function index() {
-                        //         window.location.replace("membership.php");
-                        //         }
+                success: function (result) {
+                    var data = JSON.parse(result);
+                    if (data['status'] == 'success')
+                    {   
+                        //swal("Good job!", data['msg'], "success")
+                        //setTimeout(function(){swal.close();go_payment_method(data['uid']);},3000);
+                        go_payment_method(data['uid']);
                     }
-                 $('#show').load('fetch_membership_formdata.php')
+                 //$('#show').load('fetch_membership_formdata.php')
                 }
             });
         });
     });
-      
-    $(document).ready(function () {
-        $('#show').load('fetch_membership_formdata.php')
-    });
+    function go_payment_method(uid){
+        var cost = $('#user_membership_plan_cost').val();
+        var invironment = $('#invironment').val();
+        var sandbox = $('#sandbox').val();
+        var production = $('#production').val();
+        $('#x_amount').val(cost);
+        paypal.Button.render(
+            {
+                // Configure environment
+                env: invironment,
+                client: {
+                    sandbox: sandbox,
+                    production: production,
+                },
+                // Customize button (optional)
+                locale: "en_US",
+                style: {
+                    size: "small",
+                    color: "gold",
+                    shape: "pill",
+                },
+                // Set up a payment
+                payment: function (data, actions) {
+                    return actions.payment.create({
+                        transactions: [
+                            {
+                                amount: {
+                                    total: cost,
+                                    currency: "USD",
+                                },
+                            },
+                        ],
+                    });
+                },
+                // Execute the payment
+                onAuthorize: function (data, actions) {
+                    return actions.payment.execute().then(function () {
+                        // Show a confirmation message to the buyer
+                        //window.alert('Thank you for your purchase!');
+
+                        // Redirect to the payment process page
+                        window.location = "process.php?paymentID=" + data.paymentID + "&token=" + data.paymentToken + "&payerID=" + data.payerID + "&uid=" +uid;
+                    });
+                },
+            },
+            "#paypal-button"
+        );
+        $("#ordine").modal();
+    }
+    // $(document).ready(function () {
+    //     $('#show').load('fetch_membership_formdata.php')
+    // });
     </script>

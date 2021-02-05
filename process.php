@@ -48,7 +48,8 @@ if(!empty($_GET['paymentID']) && !empty($_GET['token']) && !empty($_GET['payerID
             
             // Insert transaction data in the database
             $data = array(
-                'fname' => $fname,
+                // 'fname' => $fname,
+                'user_id' => $uid,
                 'txn_id' => $id,
                 'payment_gross' => $paidAmount,
                 'currency_code' => $currency,
@@ -61,7 +62,7 @@ if(!empty($_GET['paymentID']) && !empty($_GET['token']) && !empty($_GET['payerID
             $insert = $db->insert('payments', $data);
             
             // Add insert id to the URL
-            $redirectStr = '?id='.$insert;
+            $redirectStr = '&id='.$insert;
  
 
             // $sql = "UPDATE tata_users SET status =1 where user_id= '".$uid."'";
@@ -71,7 +72,7 @@ if(!empty($_GET['paymentID']) && !empty($_GET['token']) && !empty($_GET['payerID
     }
     
     // Redirect to payment status page
-    header("Location:payment-status.php".$redirectStr);
+    header("Location:payment-status.php?uid=".$uid.$redirectStr);
 }else{
     // Redirect to the home page
     header("Location:index.php");
